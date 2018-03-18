@@ -86,6 +86,13 @@ Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar' 
     nnoremap <F8> :TagbarToggle<CR>
 
+Plug 'junegunn/fzf.vim'
+    let $FZF_DEFAULT_OPTS .= ' --inline-info'
+    let g:fzf_layout = { 'window': 'bot 13 new'  }
+    nnoremap <nowait><silent> <leader><leader> :Files<CR>
+    nnoremap <nowait><silent> <leader><CR>     :Buffers<CR>
+
+
 call plug#end()
 
 " Map leader and localleader key to comma
