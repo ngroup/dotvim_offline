@@ -40,3 +40,9 @@
 [submodule "plugged/vim-monokai"]
 	path = plugged/vim-monokai
 	url = https://github.com/sickill/vim-monokai
+[submodule "plugged/vim-tags"]
+	path = plugged/vim-tags
+	url = https://github.com/szw/vim-tags
+[submodule "plugged/tagbar"]
+	path = plugged/tagbar
+	url = https://github.com/majutsushi/tagbar

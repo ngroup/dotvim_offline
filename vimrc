@@ -81,6 +81,10 @@ Plug 'justinmk/vim-sneak'
         autocmd ColorScheme * hi SneakPluginScope  guifg=black guibg=yellow ctermfg=black ctermbg=yellow
     augroup END
 
+Plug 'Shougo/neomru.vim'
+Plug 'szw/vim-tags'
+Plug 'majutsushi/tagbar' 
+    nnoremap <F8> :TagbarToggle<CR>
 
 call plug#end()
 
