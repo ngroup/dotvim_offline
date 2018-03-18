@@ -37,3 +37,6 @@
 [submodule "plugged/auto-pairs"]
 	path = plugged/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "plugged/vim-monokai"]
+	path = plugged/vim-monokai
+	url = https://github.com/sickill/vim-monokai

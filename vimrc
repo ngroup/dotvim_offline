@@ -2,25 +2,29 @@ call plug#begin('~/.vim/plugged')
 
 """ Theme
 " dark theme
-Plug '~/.vim/plugged/molokai'
+Plug 'sickill/vim-monokai'
 
 """ General UI
-Plug '~/.vim/plugged/lightline.vim'
+Plug 'itchyny/lightline.vim'
     let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ }
+            \ 'colorscheme': 'wombat',
+            \ 'component': {
+            \   'readonly': '%{&readonly?"":""}',
+            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
 
-Plug '~/.vim/plugged/vim-startify'
+Plug 'mhinz/vim-startify'
     let g:session_directory = "~/.vim/session"
     let g:startify_list_order = ['sessions', 'files']
 
-Plug '~/.vim/plugged/vim-buftabline'
+Plug 'ap/vim-buftabline'
     set hidden
     nnoremap <silent> = :bn<CR>
     nnoremap <silent> - :bp<CR>
 
-
-Plug '~/.vim/plugged/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     let NERDTreeChDirMode=2
     let NERDTreeIgnore = ['\.pyc$']
     let NERDTreeShowHidden=0
@@ -54,13 +58,29 @@ Plug '~/.vim/plugged/nerdtree', { 'on':  'NERDTreeToggle' }
     call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
 
-Plug '~/.vim/plugged/nerdtree-git-plugin'
-
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 """ Language
+" python syntax
+Plug 'hdima/python-syntax'
+    let g:python_highlight_all = 1
+Plug 'hynek/vim-python-pep8-indent', {'for': ['python']}
+
 " General
-Plug '~/.vim/plugged/vim-commentary'
-Plug '~/.vim/plugged/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" motion
+Plug 'justinmk/vim-sneak'
+    let g:sneak#s_next = 1
+    augroup SneakPluginColors
+        autocmd!
+        autocmd ColorScheme * hi SneakPluginTarget guifg=black guibg=red ctermfg=black ctermbg=red
+        autocmd ColorScheme * hi SneakPluginScope  guifg=black guibg=yellow ctermfg=black ctermbg=yellow
+    augroup END
+
 
 call plug#end()
 
@@ -77,7 +97,7 @@ let g:maplocalleader = ","
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=500
+set history=1000
 
 " Enable filetype plugins
 filetype plugin on
@@ -357,5 +377,9 @@ map <leader>x :e ~/buffer.md<cr>
 map <leader>pp :setlocal paste!<cr>
 
 
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q""]"
 
-colorscheme molokai
+
+colorscheme monokai
