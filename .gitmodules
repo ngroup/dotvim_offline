@@ -49,3 +49,6 @@
 [submodule "plugged/fzf.vim"]
 	path = plugged/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "plugged/vim-mucomplete"]
+	path = plugged/vim-mucomplete
+	url = https://github.com/lifepillar/vim-mucomplete
