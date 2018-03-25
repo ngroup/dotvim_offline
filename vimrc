@@ -388,9 +388,12 @@ map <leader>x :e ~/buffer.md<cr>
 map <leader>pp :setlocal paste!<cr>
 
 
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q""]"
+" Use mouse
+set mouse=a
+
+" Show line number
+set number
+
 
 
 colorscheme monokai
