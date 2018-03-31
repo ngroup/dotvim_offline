@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 """ Theme
 " dark theme
 Plug 'sickill/vim-monokai'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'rakr/vim-one'
 
 """ General UI
 Plug 'itchyny/lightline.vim'
@@ -116,6 +118,8 @@ Plug 'roxma/vim-hug-neovim-rpc'
     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
     Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+
+    Plug 'yuttie/comfortable-motion.vim'
 
 call plug#end()
 
