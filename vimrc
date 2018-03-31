@@ -1,3 +1,5 @@
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
 
 """ Theme
@@ -92,14 +94,26 @@ Plug 'junegunn/fzf.vim'
     nnoremap <nowait><silent> <leader><leader> :Files<CR>
     nnoremap <nowait><silent> <leader><CR>     :Buffers<CR>
 
-Plug 'lifepillar/vim-mucomplete'
-    set completeopt+=menuone
-    set completeopt+=noselect
-    set completeopt+=noinsert
-    set shortmess+=c   " Shut off completion messages
-    set belloff+=ctrlg " If Vim beeps during completion
-    let g:mucomplete#enable_auto_at_startup = 1
+" Plug 'lifepillar/vim-mucomplete'
+"     set completeopt+=menuone
+"     set completeopt+=noselect
+"     set completeopt+=noinsert
+"     set shortmess+=c   " Shut off completion messages
+"     set belloff+=ctrlg " If Vim beeps during completion
+"     let g:mucomplete#enable_auto_at_startup = 1
 
+" deoplete.nvim
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+    let g:deoplete#enable_at_startup = 1
+    
+    " Let <Tab> also do completion
+    inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" :
+    \ deoplete#mappings#manual_complete()
+    " Close the documentation window when completion is done
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 call plug#end()
 
@@ -115,6 +129,7 @@ let g:maplocalleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Sets how many lines of history VIM has to remember
 set history=1000
 

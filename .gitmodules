@@ -52,3 +52,12 @@
 [submodule "plugged/vim-mucomplete"]
 	path = plugged/vim-mucomplete
 	url = https://github.com/lifepillar/vim-mucomplete
+[submodule "plugged/deoplete.nvim"]
+	path = plugged/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "plugged/nvim-yarp"]
+	path = plugged/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule "plugged/vim-hug-neovim-rpc"]
+	path = plugged/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
