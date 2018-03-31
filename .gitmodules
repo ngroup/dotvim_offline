@@ -61,3 +61,6 @@
 [submodule "plugged/vim-hug-neovim-rpc"]
 	path = plugged/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "plugged/undotree"]
+	path = plugged/undotree
+	url = https://github.com/mbbill/undotree

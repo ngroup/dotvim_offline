@@ -115,6 +115,8 @@ Plug 'roxma/vim-hug-neovim-rpc'
     " Close the documentation window when completion is done
     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+    Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+
 call plug#end()
 
 " Map leader and localleader key to comma
@@ -420,3 +422,8 @@ set number
 
 
 colorscheme monokai
+
+
+" -> Undo tree
+    nnoremap <Leader>u :UndotreeToggle<CR>
+    let g:undotree_SetFocusWhenToggle=1
