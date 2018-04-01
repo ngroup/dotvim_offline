@@ -108,16 +108,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-    let g:deoplete#enable_at_startup = 1
-    
-    " Let <Tab> also do completion
-    inoremap <silent><expr> <Tab>
-    \ pumvisible() ? "\<C-n>" :
-    \ deoplete#mappings#manual_complete()
-    " Close the documentation window when completion is done
-    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-    Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+        Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
     Plug 'yuttie/comfortable-motion.vim'
 
@@ -431,3 +422,13 @@ colorscheme monokai
 " -> Undo tree
     nnoremap <Leader>u :UndotreeToggle<CR>
     let g:undotree_SetFocusWhenToggle=1
+
+" -> deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+    
+    " Close the documentation window when completion is done
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+    inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+    inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
+
