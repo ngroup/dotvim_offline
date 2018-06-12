@@ -104,8 +104,6 @@ Plug 'junegunn/fzf.vim'
 "     set belloff+=ctrlg " If Vim beeps during completion
 "     let g:mucomplete#enable_auto_at_startup = 1
 
-" deoplete.nvim
-Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
         Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
@@ -423,8 +421,6 @@ colorscheme monokai
     nnoremap <Leader>u :UndotreeToggle<CR>
     let g:undotree_SetFocusWhenToggle=1
 
-" -> deoplete.nvim
-let g:deoplete#enable_at_startup = 1
     
     " Close the documentation window when completion is done
     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
