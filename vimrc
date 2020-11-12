@@ -70,6 +70,12 @@ Plug 'hdima/python-syntax'
     let g:python_highlight_all = 1
 Plug 'hynek/vim-python-pep8-indent', {'for': ['python']}
 
+Plug 'tmhedberg/simpylfold'
+    let g:SimpylFold_fold_docstring = 0
+    let b:SimpylFold_fold_docstring = 0
+    let g:SimpylFold_fold_import = 0
+    let b:SimpylFold_fold_import = 0
+
 " General
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
@@ -281,10 +287,6 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
