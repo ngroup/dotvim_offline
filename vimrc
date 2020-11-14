@@ -2,11 +2,19 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+
+
+
+
+
 """ Theme
 " dark theme
 Plug 'sickill/vim-monokai'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
+
+
 
 """ General UI
 Plug 'itchyny/lightline.vim'
@@ -65,11 +73,16 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 """ Language
+
+Plug 'sheerun/vim-polyglot'
+
 " python syntax
-Plug 'hdima/python-syntax'
-    let g:python_highlight_all = 1
+" Plug 'hdima/python-syntax'
+    " let g:python_highlight_all = 1
+" Python Indentation
 Plug 'hynek/vim-python-pep8-indent', {'for': ['python']}
 
+" Python Folding
 Plug 'tmhedberg/simpylfold'
     let g:SimpylFold_fold_docstring = 0
     let b:SimpylFold_fold_docstring = 0
@@ -96,11 +109,14 @@ Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar' 
     nnoremap <F8> :TagbarToggle<CR>
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
-    let $FZF_DEFAULT_OPTS .= ' --inline-info'
-    let g:fzf_layout = { 'window': 'bot 13 new'  }
-    nnoremap <nowait><silent> <leader><leader> :Files<CR>
-    nnoremap <nowait><silent> <leader><CR>     :Buffers<CR>
+
+" Plug 'junegunn/fzf.vim'
+"     let $FZF_DEFAULT_OPTS .= ' --inline-info'
+"     let g:fzf_layout = { 'window': 'bot 13 new'  }
+"     nnoremap <nowait><silent> <leader><leader> :Files<CR>
+"     nnoremap <nowait><silent> <leader><CR>     :Buffers<CR>
 
 " Plug 'lifepillar/vim-mucomplete'
 "     set completeopt+=menuone
@@ -130,6 +146,10 @@ let g:maplocalleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+
+colorscheme onedark
+
 
 " Sets how many lines of history VIM has to remember
 set history=1000
@@ -416,7 +436,6 @@ set number
 
 
 
-colorscheme monokai
 
 
 " -> Undo tree
